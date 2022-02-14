@@ -1,0 +1,115 @@
+extends layout
+
+
+
+block myContent
+  body
+    .container-fluid
+      // Page Heading
+      
+      .card.shadow.mb-4.mt-1
+        .card-header.py-3
+          h6.m-0.font-weight-bold.text-primary All Travellers
+        |                         
+        .card-body
+          .table-responsive
+            table#dataTableAllUsers.table.table-bordered(width='100%', cellspacing='0')
+              thead
+                tr
+                  th Traveller
+                  |                                             
+                  th Contact
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |                                             
+                  th Actions
+                  |                                             
+              |                                     
+              tfoot
+                tr
+                  th Traveller
+                  |                                             
+                  th Contact
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |                                             
+                  th Actions
+                  |                                             
+              |                                     
+              tbody
+                - for (var i = 0; i < selectAllUsersVar.length; ++i) { 
+                tr(id=i)
+                  td.row-data(name='fullName')=selectAllUsersVar[i].fname+" "+selectAllUsersVar[i].lname
+                   |  
+                   br
+                   small(name='nationality')=selectAllUsersVar[i].nationality
+
+                  |                                             
+                  td.row-data(name='phoneN')=selectAllUsersVar[i].phoneN
+                    br
+                    small.row-data(name='email')=selectAllUsersVar[i].email
+                  |                          
+                                     
+                  td.row-data(name='tripName')=selectAllUsersVar[i].tripName
+                    br
+                    small.row-data(name='tripWebsite')=selectAllUsersVar[i].tripWebsite+" || "+selectAllUsersVar[i].nOfGuests+" Guests"
+                  |                                             
+ 
+                  td.row-data(name='date')=selectAllUsersVar[i].date
+                    br
+                    small.row-data(name='time')=selectAllUsersVar[i].time
+                  |                                             
+                  td
+                    .col-md-12(style='justify-content: space-between')
+                    button.btn.btn-success.my-1(onclick="EditBut()")
+                        i.fas.fa-user-edit.mx-1
+                        | Edit
+                    |           
+                    button.btn.btn-danger(onclick="modelBut()", data-toggle='modal', data-target='#deleteModal')
+                        i.fas.fa-user-times.mx-1
+                        | Delete
+                |   
+                - } 
+    // Modal
+    #deleteModal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-dialog.modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Deleting User
+            |         
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') &times;
+          |       
+          .modal-body
+            h6 Are you Sure you want to delete this trip?
+            span For User : 
+            span#modelfullName
+            span || 
+            span#modelPhoneN
+            br
+            span For Trip : 
+            span#modelTripName
+          |       
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+            |         
+            button.btn.btn-danger(onclick="deleteBut()")
+                        i.fas.fa-user-times.mx-1
+                        | Delete
+
+    script(src='js/searchAllUsers.js')
+
+
+
+
+ 
+
+
+
+    
+    // /.container-fluid
+

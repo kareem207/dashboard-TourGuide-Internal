@@ -1,0 +1,131 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    |   
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |   
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    |   
+    meta(name='description', content='')
+    |   
+    meta(name='author', content='')
+    |   
+    title Elsafy Dashboard 
+    // Custom fonts for this template
+    link(rel='stylesheet', href='vendor/fontawesome-free/css/all.min.css',  type='text/css')
+    |   
+    link( rel='stylesheet', href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')
+    // Custom styles for this template
+    link( rel='stylesheet' ,href='css/sb-admin-2.min.css')
+    
+
+    
+  body#page-top
+    // Page Wrapper
+    #wrapper
+      // Sidebar
+      ul#accordionSidebar.navbar-nav.bg-gradient-dark.sidebar.sidebar-dark.accordion
+        // Sidebar - Brand
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='index')
+          .sidebar-brand-icon.rotate-n-15.mx-1
+            i.fa-etsy
+          |         
+          .sidebar-brand-text.mx-3
+            | Elsafy
+        // Divider
+        hr.sidebar-divider.my-0
+        // Nav Item - Dashboard
+        li.nav-item.active
+          a.nav-link(href='index')
+            i.fas.fa-fw.fa-tachometer-alt.mx-1
+            span Dashboard
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        // Nav Item - Add User
+        li.nav-item
+          a.nav-link(href='register')
+            i.fa.fa-plus.mx-1
+            span Add User
+
+        // Nav Item - Coming users
+        li.nav-item
+          a.nav-link(href='upComingTrips')
+            i.fas.fa-table.mx-1
+            span Coming Users
+        // Nav Item - Serach All Users
+        li.nav-item
+          a.nav-link(href='searchAllUsers')
+            i.fas.fa-edit.mx-1
+            span Serach All Users (U or D)
+        // Nav Item - Serach All Users
+        li.nav-item
+          a.nav-link(href='searchFinancialOfUsers')
+            i.fas.fa-money-bill-alt.mx-1          
+            span Serach Financial
+        // Nav Item - Add Trip
+        li.nav-item
+          a.nav-link(href='')
+            i.fas.fa-globe-africa.mx-1
+            span Add Trip
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block
+        // Nav Item - Add Trip
+        li.nav-item
+          a.nav-link(href='logout')
+            i.fas.fa-sign-out-alt.mx-1
+            span LogOut
+        // Divider
+
+        // Sidebar Toggler (Sidebar)
+        .text-center.d-none.d-md-inline
+          button#sidebarToggle.rounded-circle.border-0
+      // End of Sidebar
+      // Content Wrapper
+      #content-wrapper.d-flex.flex-column
+        // Main Content
+        #content.m-4
+          // Topbar
+          // End of Topbar
+          // Begin Page Content
+          .container-fluid
+            // Page Heading
+            block myContent
+          // /.container-fluid
+          // End of Main Content
+          // Footer
+          footer.sticky-footer.bg-white
+            .container.my-auto
+              .copyright.text-center.my-auto
+                span Copyright &copy; Your Website 2020
+          // End of Footer
+          // End of Content Wrapper
+          // End of Page Wrapper
+          // Scroll to Top Button
+          a.scroll-to-top.rounded(href='#page-top')
+            i.fas.fa-angle-up
+          // Logout Modal
+
+
+        script(src='vendor/jquery/jquery.min.js')
+        |     
+        script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+        // Core plugin JavaScript
+        script(src='vendor/jquery-easing/jquery.easing.min.js')
+        // Custom scripts for all pages
+        script(src='js/sb-admin-2.min.js')
+        // Page level plugins
+        script(src='vendor/chart.js/Chart.min.js')
+
+        // Page level plugins
+        script(src='vendor/datatables/jquery.dataTables.min.js')
+        |     
+        script(src='vendor/datatables/dataTables.bootstrap4.min.js')
+        // Page level custom scripts
+        script(src='js/homePage.js')
+
+        script(src='js/demo/datatables-demo.js')
+
+
+

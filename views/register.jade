@@ -1,0 +1,92 @@
+extends layout
+
+block myContent
+
+ html
+  head
+  body
+    #content-wrapper.d-flex.flex-column
+      // Main Content
+      #content.m-4
+        // Topbar
+        // End of Topbar
+        // Begin Page Content
+        .container-fluid
+          // Page Heading
+          // Page Wrapper
+          .py-5.text-center
+            .container
+              .row
+                .mx-auto.col-lg-8.col-10
+                  h1 WELCOME
+                  |                   
+                  form.user(method='post', action='insertUser')
+                    .row
+                      .form-group.col-6
+                        input#inputFirstName.form-control.form-control-user(type='text',  placeholder='First Name', name='inputFirstName', required='required')
+                      |                       
+                      .form-group.col-6
+                        input#inputLastName.form-control.form-control-user(type='text',  placeholder='Last Name', name='inputLastName')
+                    |                     
+                    .form-group
+                      input#inputEmail.form-control.form-control-user(type='email',  placeholder='Email Address', name='inputEmail')
+                    |                     
+                    .form-group
+                      input#inputNationality.form-control.form-control-user(type='text',  placeholder='Nationality', name='inputNationality')
+                    |                     
+                    .row
+                      .form-group.col-6
+                        input#inputNumber.form-control.form-control-user(type='text',  placeholder='Phone Number', name='inputNumber',  required='required')
+                      |                       
+                      .form-group.col-6
+                        input#inputNGuests.form-control.form-control-user(type='text',  placeholder='Number Of Guests', name='inputNGuests'  value = '0')
+                    |                     
+                    .row
+                      .form-group.col-6
+                        input#inputDate.form-control.form-control-user(type='date',  name='inputDate', required='required')
+                      |                       
+                      .form-group.col-6
+                        input#inputTime.form-control.form-control-user(type='time',  name='inputTime', required='required')
+                    |                     
+                    .row
+                      .form-group.col-6
+                        input#inputTripPrice.form-control.form-control-user(type='text',  placeholder='Trip Price', name='inputTripPrice' value = '0')
+                      |                       
+                      .form-group.col-6
+                        input#inputTripExtraPrice.form-control.form-control-user(type='text',  placeholder='Trip Extra Price', name='inputTripExtraPrice' value = '0')
+                    |                     
+                    .row
+                      .form-group.col-6
+                        select#inputTripName.form-control(name='inputTripName')
+                          option(value='Night city Walk') Night city Walk
+                          |                   
+                          option(value='Khan El Khalili') Khan El Khalili
+                          |                   
+                          option(value='The Pyramids') The Pyramids
+                          |                   
+                          option(value='The Citadel of Salah al-Din') The Citadel of Salah al-Din
+                          |                   
+                          option(value='Alexandria') Alexandria
+                          |                   
+                          option(value='Other') Other
+                      |                       
+                      .form-group.col-6
+                        select#inputWebsite.form-control(name='inputWebsite', required='required')
+                          option(value='FREETOUR') FREE TOUR
+                          |                   
+                          option(value='Airbnb') Airbnb
+                          |                   
+                          option(value='Guru Walk') Guru Walk
+                          |                   
+                          option(value='Trip Advisor') Trip Advisor
+                          |                   
+                          option(value='Other') Other
+
+                      |                       
+                      button.btn.btn-dark.btn-user.btn-block(type='submit') REGISTER
+                      |                       
+                      hr
+            |             
+            #wrapper
+            // /.container-fluid
+          // End of Main Content

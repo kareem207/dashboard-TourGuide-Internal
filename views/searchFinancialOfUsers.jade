@@ -1,0 +1,95 @@
+extends layout
+
+block myContent
+  body
+    .container-fluid
+      // Page Heading
+      
+      .card.shadow.mb-4.mt-1
+        .card-header.py-3
+          h6.m-0.font-weight-bold.text-primary All Travellers
+        |                         
+        .card-body
+          .table-responsive
+            table#unPaidK.table.table-bordered(width='100%', cellspacing='0')
+              thead
+                tr
+                  th Traveller
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |                                             
+                  th Finance 
+                  |                                             
+                  th Actions
+                  |                                             
+              |                                     
+              tfoot
+                tr
+                  th Traveller
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |                                             
+                  th Finance 
+                  |                                             
+                  th Actions
+                  |                                             
+              |                                     
+              tbody
+                - for (var i = 0; i < selectAllUsersVar.length; ++i) { 
+                tr(id=i)
+                  td.row-data(name='fullName')=selectAllUsersVar[i].fname+" "+selectAllUsersVar[i].lname
+                   |  
+                   br
+                   small.row-data(name='phoneN')=selectAllUsersVar[i].phoneN
+                  |                          
+                                     
+                  td.row-data(name='tripName')=selectAllUsersVar[i].tripName
+                    br
+                    small(name='tripWebsite')=selectAllUsersVar[i].tripWebsite+" || "+selectAllUsersVar[i].nOfGuests+" Guests"
+                  |              
+               
+                  td(name='date')=selectAllUsersVar[i].dateFormated
+                  |                                             
+                  -var total = (selectAllUsersVar[i].price + selectAllUsersVar[i].extraCash)*.2 +" EGP"
+                  td(name='price')="Price : "+selectAllUsersVar[i].price+" || Extra Cash : "+selectAllUsersVar[i].extraCash
+                    br
+                    small(name='time')="Total K Profit Share : "+total
+                  |                                             
+                  td
+                    button.btn.btn-warning(onclick="modelBut2()", data-toggle='modal', data-target='#updateModal', style='justify-content: space-between')
+                        i.fas.fa-check.mx-1
+                        | Change to Paid
+                |   
+                - } 
+    // Modal
+    #updateModal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+      .modal-dialog.modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title  Update trip to Paid
+            |         
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') &times;
+          |       
+          .modal-body
+            h6 Are you Sure you want to Update this trip to Paid?
+            span For User : 
+            span#modelfullName
+            span || 
+            span#modelPhoneN
+            br
+            span Trip Name : 
+            span#modelTripName
+          |       
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+            |         
+            button.btn.btn-warning(onclick="updatePaidKBut()")
+                        i.fas.fa-check-double.mx-1
+                        | Confirm Updating 
+
+    script(src='js/searchFinancialOfUsers.js')

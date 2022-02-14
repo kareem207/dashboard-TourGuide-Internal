@@ -1,0 +1,63 @@
+extends layout
+
+
+
+block myContent
+
+  body
+    .container-fluid
+      // Page Heading
+      
+      .card.shadow.mb-4.mt-1
+        .card-header.py-3
+          h6.m-0.font-weight-bold.text-primary Upcoming Trips
+        |                         
+        .card-body
+          .table-responsive
+            table#dataTableComingUsers.table.table-bordered(width='100%', cellspacing='0')
+              thead
+                tr
+                  th Traveller
+                  |                                             
+                  th Contact
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |                                             
+              |                                     
+              tfoot
+                tr
+                  th Traveller
+                  |                                             
+                  th Contact
+                  |                                             
+                  th Trip Detalis
+                  |                                             
+                  th Trip Date
+                  |           
+              |                                     
+              tbody
+                - for (var i = 0; i < selectUpComingBookingVar.length; ++i) { 
+                tr
+                  td=selectUpComingBookingVar[i].fname+" "+selectUpComingBookingVar[i].lname
+                   br
+                   small=selectUpComingBookingVar[i].nationality
+
+                  td=selectUpComingBookingVar[i].phoneN
+                    br
+                    small=selectUpComingBookingVar[i].email
+
+                  td=selectUpComingBookingVar[i].tripName
+                    br
+                    small=selectUpComingBookingVar[i].tripWebsite+" || "+selectUpComingBookingVar[i].nOfGuests+" Guests" 
+ 
+                    td=selectUpComingBookingVar[i].realDate
+                      br
+                      small=selectUpComingBookingVar[i].time                   
+                - }                                      
+              
+
+                
+    // /.container-fluid
+
